@@ -1,10 +1,13 @@
-html
-   head
-      title Profile page
-   body
-      p Hi, #{user.username}. you're now in Profile Page.
-      p You may update your profile.
-      form(action="/profile" method="POST")
-        input(name = "new_username" type="text" required placeholder="username" value="#{user.username}")
-        input(name = "new_password" type = "password" required placeholder = "password" value="#{user.password}")
-        button(type = "Submit") Update
+extends layout
+
+block content
+   p Hi, #{user.username}. you're now in Profile Page.
+   p You may update your profile.
+   form(action="/profile" method="POST")
+     input(name = "new_username" type="text" required placeholder="username" value="#{user.username}")
+     input(name = "new_password" type = "password" required placeholder = "password" value="#{user.password}")
+     input(name = "new_email" type = "email" required placeholder = "sample@gmail.com" value="#{user.email}")
+     input(name = "new_organization" type = "text" required placeholder = "organization" value="#{user.organization}")
+     input(name = "new_gender" type = "text" required placeholder = "M/F" value="#{user.gender}")
+     input(name = "new_birthday" type = "text" required placeholder = "mm/dd/yyyy" value="#{user.birthday}")
+     button(type = "Submit") Update

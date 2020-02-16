@@ -1,0 +1,7 @@
+extends layout
+
+block content
+   if(message)
+      h4 #{message}
+      form(action="/login")
+         button(type="Login") Login

@@ -1,13 +1,19 @@
-html
-   head
-      title Registration
-   body
+extends layout
+
+block content
       if(message)
          h4 #{message}
-         form(action = "/register" method = "POST")
+         form(action="/register" method="POST")
              input(name = "username" type = "text" required 
-                   placeholder = "username")
+                   placeholder = "Username")
              input(name = "password" type = "password" required 
-                   placeholder = "password")
+                   placeholder = "Password")
+             input(name = "email" type = "email"  
+                   placeholder = "Email")
+             input(name = "organization" type = "text"  
+                   placeholder = "Organization")
+             input(name = "gender" type = "text"  
+                   placeholder = "Gender")
+             input(name = "birthday" type = "text"  
+                   placeholder = "mm/dd/yyyy")
              button(type = "Submit") Register me!
-         

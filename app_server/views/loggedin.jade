@@ -1,7 +1,6 @@
-html
-   head
-      title Logged in page
-   body
-      p Hi, #{name}, you're now logged in.
-      p You may update your profile.
-      a(href="/profile") Update Profile
+extends layout
+
+block content
+   p Hi, #{name}, you're now logged in.
+   p You may update your profile.
+   a(href="/profile") Update Profile

@@ -9,7 +9,8 @@ module.exports.loggedIn = function (req, res, next) {
     }
     else {
         console.log("Not logged in");
-        res.send("You must first log in.");
+        // res.send("You must first log in!!!");
+        res.render('login', { message: 'Please log in!' });
     }
 };
 
@@ -17,7 +18,7 @@ module.exports.loggedIn = function (req, res, next) {
  * GET home page.
  */
 module.exports.index = function (req, res, next) {
-    res.render('index', { title: 'Authentication Demo' });
+    res.render('index', { title: 'Assignment 2' });
     console.log('Cookies: ', req.cookies);
 };
 
@@ -26,7 +27,7 @@ module.exports.index = function (req, res, next) {
  */
 module.exports.get_register = function (req, res) {
     res.render('register',
-        { message: "Please register!" });
+        { title: "Register", message: "Please register!" });
 };
 
 /*
@@ -52,7 +53,11 @@ module.exports.post_register = function (req, res) {
         else {
             var newUser = {
                 username: req.body.username,
-                password: req.body.password
+                password: req.body.password,
+                email: req.body.email,
+                organization: req.body.organization,
+                gender: req.body.gender,
+                birthday: req.body.birthday
             };
             registeredUsers.push(newUser);
             console.log("New user:"); console.log(newUser);
@@ -66,7 +71,7 @@ module.exports.post_register = function (req, res) {
  * GET login page.
  */
 module.exports.get_login = function (req, res) {
-    res.render('login', { message: "Please log in!" });
+    res.render('login', { title: "Login", message: "Please log in!" });
 };
 
 /*
@@ -124,15 +129,18 @@ module.exports.get_logout = function (req, res) {
  * GET protected page.
  */
 module.exports.get_protected = function (req, res) {
-    res.render('protected', { name: req.session.user.username });
+    res.render('protected', { title: "Protected", name: req.session.user.username });
 };
 
 module.exports.get_profile = function (req, res) {
     var matches = registeredUsers.filter(function (user) {
         return user.username === req.session.user.username;
     });
-    if (matches[0]) res.render('profile', { user: matches[0] })
-    else res.send("You must first log in.");
+    if (matches[0]) res.render('profile', { title: "Profile", user: matches[0] })
+    else {
+        // res.send("You must first log in.");
+        res.render('profilelogin', { title: "Error", message: 'You must first log in!' });
+    }
 }
 
 module.exports.post_profile = function (req, res) {
@@ -143,6 +151,10 @@ module.exports.post_profile = function (req, res) {
     Object.assign(matches[0], {
         username: req.body.new_username,
         password: req.body.new_password,
+        email: req.body.new_email,
+        organization: req.body.new_organization,
+        gender: req.body.new_gender,
+        birthday: req.body.new_birthday,
     });
     console.log('registered users:', registeredUsers);
     res.render('profile', { user: matches[0] })
