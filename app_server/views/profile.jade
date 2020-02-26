@@ -1,13 +1,22 @@
 extends layout
 
 block content
-   p Hi, #{user.username}. you're now in Profile Page.
-   p You may update your profile.
-   form(action="/profile" method="POST")
-     input(name = "new_username" type="text" required placeholder="username" value="#{user.username}")
-     input(name = "new_password" type = "password" required placeholder = "password" value="#{user.password}")
-     input(name = "new_email" type = "email" required placeholder = "sample@gmail.com" value="#{user.email}")
-     input(name = "new_organization" type = "text" required placeholder = "organization" value="#{user.organization}")
-     input(name = "new_gender" type = "text" required placeholder = "M/F" value="#{user.gender}")
-     input(name = "new_birthday" type = "text" required placeholder = "mm/dd/yyyy" value="#{user.birthday}")
-     button(type = "Submit") Update
+    p Hi, #{user.username}. you're now in Profile Page.
+    p You may update your profile.
+    form(action="/profile" method="POST" onsubmit="return validate('new_')")
+        input(id="new_username" name = "new_username" type="text" required placeholder="username" value="#{user.username}")
+        input(id="new_password" name = "new_password" type = "password" required placeholder = "password" value="#{user.password}")
+        input(id="new_email" name = "new_email" type = "email" required placeholder = "sample@gmail.com" value="#{user.email}")
+        input(id="new_organization" name = "new_organization" type = "text" required placeholder = "organization" value="#{user.organization}")
+        //- input(name = "new_gender" type = "text" required placeholder = "M/F" value="#{user.gender}")
+        legend Gender: 
+            input(type="radio" name="new_gender" id="male" value="Male" checked=user.gender == 'Male')
+            label(for="male") Male
+            input(type="radio" name="new_gender" id="female" value="Female" checked=user.gender == "Female")
+            label(for="female") Female
+            input(type="radio" name="new_gender" id="other" value="Other" checked=user.gender == 'Other')
+            label(for="other") Other
+        input(name = "new_birthday" type = "text" required placeholder = "mm/dd/yyyy" value="#{user.birthday}")
+        button(type = "Submit") Update
+        #error
+    script(src="./validate.js")

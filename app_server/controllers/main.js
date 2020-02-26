@@ -18,7 +18,7 @@ module.exports.loggedIn = function (req, res, next) {
  * GET home page.
  */
 module.exports.index = function (req, res, next) {
-    res.render('index', { title: 'Assignment 2' });
+    res.render('index', { title: 'Assignment 3' });
     console.log('Cookies: ', req.cookies);
 };
 

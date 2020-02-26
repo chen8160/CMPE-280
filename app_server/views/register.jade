@@ -1,19 +1,26 @@
 extends layout
 
 block content
-      if(message)
-         h4 #{message}
-         form(action="/register" method="POST")
-             input(name = "username" type = "text" required 
-                   placeholder = "Username")
-             input(name = "password" type = "password" required 
-                   placeholder = "Password")
-             input(name = "email" type = "email"  
-                   placeholder = "Email")
-             input(name = "organization" type = "text"  
-                   placeholder = "Organization")
-             input(name = "gender" type = "text"  
-                   placeholder = "Gender")
-             input(name = "birthday" type = "text"  
-                   placeholder = "mm/dd/yyyy")
-             button(type = "Submit") Register me!
+    if(message)
+        h4 #{message}
+        form(action="/register" method="POST" onsubmit="return validate('')")
+            input(id="username" name = "username" type = "text" required 
+                placeholder = "Username")
+            input(id="password" name = "password" type = "password" required 
+                placeholder = "Password")
+            input(id="email" name = "email" type = "email"  
+                placeholder = "Email")
+            input(id="organization" name = "organization" type = "text"  
+                placeholder = "Organization")
+            legend Gender: 
+                input(type="radio" name="gender" id="male" value="Male")
+                label(for="male") Male
+                input(type="radio" name="gender" id="female" value="Female")
+                label(for="female") Female
+                input(type="radio" name="gender" id="other" value="Other")
+                label(for="other") Other
+            input(name = "birthday" type = "text"  
+                placeholder = "mm/dd/yyyy")
+            button(type = "Submit") Register me!
+            #error
+    script(src="./validate.js")
