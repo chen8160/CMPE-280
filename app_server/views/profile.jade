@@ -2,6 +2,19 @@ extends layout
 
 block content
     p Hi, #{user.username}. you're now in Profile Page.
+    p Below is your current profile:
+    table
+        tr
+            th Email
+            th Organization
+            th Gender
+            th Birthdate
+        tr
+            td #{user.email}
+            td #{user.organization}
+            td #{user.gender}
+            td #{user.birthday}
+
     p You may update your profile.
     form(action="/profile" method="POST" onsubmit="return validate('new_')")
         input(id="new_username" name = "new_username" type="text" required placeholder="username" value="#{user.username}")

@@ -9,7 +9,6 @@ body {
     text-align: center;
     align-items: center;
     transition: all 1s;
-
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -37,9 +36,24 @@ input {
         transform: translateY(20%);
         opacity: 0;
     }
-
     100% {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

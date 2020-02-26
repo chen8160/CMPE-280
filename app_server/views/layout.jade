@@ -4,5 +4,9 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-  body
+    script(src="/canvas/animation.js")
+  body(onload="initDouble()")
+    canvas(id="myCanvas" height="50" width="150")
+    br
+    canvas(id="canvas" height="200" width="200")
     block content
