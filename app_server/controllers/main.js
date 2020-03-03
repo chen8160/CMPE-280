@@ -165,3 +165,7 @@ module.exports.assignment4 = function (req, res) {
     console.log('loading assignment4');
     res.render('assignment4', { title: 'Assignment4' });
 }
+
+// module.exports.team = function (req, res) {
+//     res.render('team');
+// }

@@ -1,0 +1,52 @@
+/* Adapted from: 
+   HTML5 and CSS3 for Dummies, 3rd ed.
+   by Andy Harris
+   Wiley, 2014
+   ISBN 978-1-118-28938-9
+*/
+
+#buttons {
+    float: left;
+}
+
+.content {
+    /* float: right; */
+    width: 10em;
+    border: 3px outset black;
+    background-color: lightgray;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.content.yc {
+    float: right;
+}
+
+.content.tc {
+    float: right;
+}
+
+.content.xj {
+    float: right;
+}
+
+.content.xz {
+    float: right;
+}
+
+h2 {
+    width: 10em;
+    border: 3px outset black;
+    background-color: lightgray;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.wrapped {
+    border: 3px solid red;
+    padding: 2px;
+}

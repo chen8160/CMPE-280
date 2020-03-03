@@ -49,5 +49,6 @@ router.post('/profile', ctrlMain.loggedIn, ctrlMain.post_profile);
  * GET assignment4 page
  */
 router.get('/assignment4', ctrlMain.assignment4);
+// router.get('/team',ctrlMain.team);
 
 module.exports = router;
