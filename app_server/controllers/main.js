@@ -159,3 +159,9 @@ module.exports.post_profile = function (req, res) {
     console.log('registered users:', registeredUsers);
     res.render('profile', { user: matches[0] })
 }
+
+
+module.exports.assignment4 = function (req, res) {
+    console.log('loading assignment4');
+    res.render('assignment4', { title: 'Assignment4' });
+}

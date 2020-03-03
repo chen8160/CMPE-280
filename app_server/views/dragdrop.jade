@@ -1,0 +1,18 @@
+extends assignment4template
+
+block content
+    div
+        script(src="/js/dragdrop.js")
+        script(src="/js/resize.js")
+        h1 Play around
+        div(class='dragMe' id='resizeMe')
+            h3
+                //- span(class='ui-icon ui-icon-heart')
+                | Drag me
+                br
+                | or
+                br
+                | Resize me
+                //- span(class='ui-icon ui-icon-star')
+            p Drag a corner or side to resize
+        div(id='target') DROP HERE

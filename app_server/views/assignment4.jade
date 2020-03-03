@@ -1,0 +1,30 @@
+extends assignment4template
+
+block content
+    script(src="/js/tabs.js")
+    div
+        h1 GO BULLY
+        div(id='tabs')
+            ul
+                li
+                    a(href='#YC') Yuxiang Chen
+                li
+                    a(href='#TC') Tianyu Cao
+                li
+                    a(href='#XJ') Xiaoting Jin
+                li
+                    a(href='#XZ') Xiaorui Zhang
+            div(id='YC')
+                h2 Team leader of GO BULLY
+                p The coolest man of SJSU
+            div(id='TC')
+                h2 Team member of GO BULLY
+                p YC's servant 
+            div(id='XJ')
+                h2 Team member of GO BULLY
+                p A beautiful lady
+            div(id='XZ')
+                h2 Team member of GO BULLY
+                p Another beautiful lady
+    div
+        include ./dragdrop.jade

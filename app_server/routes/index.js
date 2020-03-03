@@ -44,4 +44,10 @@ router.get('/profile', ctrlMain.loggedIn, ctrlMain.get_profile);
 
 router.post('/profile', ctrlMain.loggedIn, ctrlMain.post_profile);
 
+
+/**
+ * GET assignment4 page
+ */
+router.get('/assignment4', ctrlMain.assignment4);
+
 module.exports = router;
