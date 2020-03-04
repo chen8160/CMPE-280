@@ -4,14 +4,13 @@ block content
     div
         script(src="/js/dragdrop.js")
         script(src="/js/resize.js")
-        h1 Play around
-        div(class='dragMe' id='resizeMe')
-            h3
+        h1.ui-widget-header Play around
+        div(class='dragMe ui-resizable ui-widget-content ui-widget-corner-all' id='resizeMe')
+            h4(class='ui-widget-header ui-widget-corner-all')
                 | Drag me
                 br
                 | or
                 br
                 | Resize me
             p Drag a corner or side to resize
-            //- img(src='/images/dog.jpg')
         div(id='target') DROP HERE

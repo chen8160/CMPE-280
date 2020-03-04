@@ -1,15 +1,13 @@
 extends assignment4template
 
 block content
-    //- script(src='/js/tabs.js')
     script(src='/js/effects.js')
-    div
-        h1 GO BULLY
-        div#buttons
-            h2#fadeToggle Yuxiang Chen
-            h2#slideToggle Tianyu Cao
-            h2#toggleXJ Xiaoting Jin
-            h2#toggleXZ Xiaorui Zhang
+    div(class='ui-tabs-panel ui-widget-content ui-corner-bottom')
+        h1.ui-widget-header GO BULLY
+        h2#fadeToggle Yuxiang Chen
+        h2#slideToggle Tianyu Cao
+        h2#toggleXJ Xiaoting Jin
+        h2#toggleXZ Xiaorui Zhang
         h2#contentYC.content.yc.
             Team leader of GO BULLY
             The coolest man of SJSU
@@ -19,6 +17,6 @@ block content
         h2#contentXJ.content.xj.
             Team member of GO BULLY
             A beautiful lady
-        h2#contentXZ.content.tc.
+        h2#contentXZ.content.xz.
             Team member of GO BULLY
             Another beautiful lady

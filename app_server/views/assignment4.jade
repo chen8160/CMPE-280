@@ -2,12 +2,22 @@ extends assignment4template
 
 block content
     script(src="/js/tabs.js")
+    script(src="/js/widgets.js")
     div#tabs
         ul
             li: a(href='#team') Team
-            li: a(href='#dragdrop') DragDrop
-            li: a(href='#test') Test
+            li: a(href='#dragdrop') Playground
+            li: a(href='#date') Math Question
+            li: a(href='#rate') Rate the work
+            li: a(href='#sort') Challenge yourself!
         div#team
             include ./team.jade
         div#dragdrop
             include ./dragdrop.jade
+        div#date
+            include ./date.jade
+        div#rate
+            include ./rate.jade
+        div#sort
+            include ./sort.jade
+            

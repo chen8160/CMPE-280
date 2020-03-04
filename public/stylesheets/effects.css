@@ -21,23 +21,23 @@
 }
 
 .content.yc {
-    float: right;
+    float: auto;
 }
 
 .content.tc {
-    float: right;
+    float: auto;
 }
 
 .content.xj {
-    float: right;
+    float: auto;
 }
 
 .content.xz {
-    float: right;
+    float: auto;
 }
 
 h2 {
-    width: 10em;
+    width: auto;
     border: 3px outset black;
     background-color: lightgray;
     text-align: center;
